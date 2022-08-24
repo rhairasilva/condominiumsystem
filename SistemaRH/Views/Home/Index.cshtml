@@ -1,0 +1,258 @@
+﻿@{
+    ViewData["Title"] = "Início";
+
+}
+<div class="text-left">
+    <h4 class="display-4" style="font-size:xx-large">Atividades em aberto</h4>
+    <p></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-2 col-sm-auto">
+                        <span class="badge badge-pill badge-success" style="background-color: #aaff80; color: black">@ViewData["QntNoPrazo"]</span>
+                    </div>
+                    <div class="col col-sm-auto">
+                        <font style="font-size:large">No prazo </font>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 col-sm-auto">
+                        <span class="badge badge-pill badge-warning" style="background-color: #ffff80">@ViewData["QntVencendo"]</span>
+                    </div>
+                    <div class="col col-sm-auto">
+                        <font style="font-size:large">Vencendo </font>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 col-sm-auto">
+                        <span class="badge badge-pill badge-danger" style="background-color: #ff8080; color: black">@ViewData["QntAtrasadas"]</span>
+                    </div>
+                    <div class="col col-sm-auto">
+                        <font style="font-size:large">Atrasadas </font>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2 col-sm-auto">
+                        <span class="badge badge-pill badge-dark" style="background-color: ghostwhite; color: black">@ViewData["QntTotal"]</span>
+                    </div>
+                    <div class="col col-sm-auto">
+                        <font style="font-size:large">Total </font>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="list-group">
+                        <div class="col">
+                            <a class="nav-link text-dark list-group-item list-group-item-action" asp-area="" asp-controller="AtividadeDP" asp-action="AdicionarAtividade">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                                </svg>
+                                Adicionar atividade
+                            </a>
+                            <a class="nav-link text-dark list-group-item list-group-item-action" asp-area="" asp-controller="Home" asp-action="VisualizarAtividadesEncerradas">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill"
+                                     viewBox="0 0 16 16">
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0
+                                                    0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093
+                                                    3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                                </svg>
+                                Atividades encerradas
+                            </a>
+                            <a class="nav-link text-dark list-group-item list-group-item-action" asp-area="" asp-controller="Home" asp-action="VisualizarTodasAtividades">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ui-checks-grid" viewBox="0 0 16 16">
+                                    <path d="M2 10h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1zm9-9h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm0 9a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-3zm0-10a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-3zM2 9a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H2zm7 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-3zM0 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.354.854a.5.5 0 1 0-.708-.708L3 3.793l-.646-.647a.5.5 0 1 0-.708.708l1 1a.5.5 0 0 0 .708 0l2-2z" />
+                                </svg>
+                                Todas as atividades (encerradas e em andamento)
+                            </a>
+                            <a class="nav-link text-dark list-group-item list-group-item-action" asp-area="" asp-controller="AtividadeDP" asp-action="ExtrairRelatorioAtividadesEmAndamento">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                                </svg>
+                                Extrair relatório
+                            </a>
+                            @*<form asp-controller="AtividadeDP" asp-action="DeletarAtividadeDP" method="post" onsubmit="return confirm('Deseja deletar esta atividade?');">
+                                    <input type="hidden" name="id" value="100">
+                                    <button type="submit" class="list-group-item list-group-item-action" id="1">
+                                        Teste
+                                    </button>
+                                </form>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+</div>
+@*@if (!User.Identity.IsAuthenticated)
+    {
+        <div class="text-center">
+            <h1 class="display-4">Bem-vindo!</h1>
+            <br></br>
+        </div>
+        <form asp-controller="ContaUsuario" asp-action="LoginUser" method="post">
+            <div class="form-group row h-100 justify-content-center align-items-center">
+                <label for="inputNomeDeUsuario" class="col-sm-2 col-form-label">Nome de Usuário</label>
+                <div class="col-md-4 col-md-offset-4 col-xs-4">
+                    <input type="text" class="form-control" id="inputNomeDeUsuario" placeholder="Nome de usuário">
+                </div>
+            </div>
+            <div class="form-group row h-100 justify-content-center align-items-center">
+                <label for="inputSenha" class="col-sm-2 col-form-label">Senha</label>
+                <div class="col-md-4 col-md-offset-4 col-xs-4">
+                    <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+                </div>
+            </div>
+            <div class="form-group row h-100 justify-content-md-end align-items-lg-end">
+                <div class="col-md-4 col-md-offset-4 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </div>
+            </div>
+        </form>
+    }*@
+@*<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.18.3/extensions/filter-control/bootstrap-table-filter-control.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.18.3/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.18.3/extensions/filter-control/utils.min.js"></script>*@
+<link href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </div>
+        </div>
+        <input class="form-control" id="pesquisarTabela" type="text" style="background-color: ghostwhite" placeholder="Pesquisar na tabela">
+    </div>
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="align-middle">Id</th>
+                <th scope="col" class="align-middle">Prazo de Entrega</th>
+                <th scope="col" class="align-middle">Vencimento</th>
+                <th scope="col" class="align-middle">Atividade </th>
+                <th scope="col" class="align-middle">Responsável </th>
+                <th scope="col" class="align-middle">E-mail do Responsável</th>
+                <th scope="col" class="align-middle">Qt Cond</th>
+                <th scope="col" class="align-middle">Status</th>
+                <th scope="col" class="align-middle"></th>
+            </tr>
+        </thead>
+        <tbody id="tabelaAtividades">
+            @foreach (var atividade in Model)
+            {
+                <tr>
+                    <td>@atividade.Id</td>
+                    <td>@atividade.PrazoDeEntrega</td>
+                    <td>@atividade.Vencimento</td>
+                    <td>@atividade.Nome</td>
+                    <td>@atividade.CargoDoResponsavel</td>
+                    <td id="colResponsavel">@atividade.EmailDoResponsavel</td>
+                    <td>@atividade.QtCond</td>
+                    <td class="text-center">
+                        @if (atividade.Status == "No prazo")
+                        { //#009900
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#aaff80" class="bi bi-square-fill" viewBox="0 0 16 16">
+                            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                            </svg>
+                        }
+                        else if (atividade.Status == "Vencendo")
+                        { //#ffff00
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffff80" class="bi bi-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                            </svg>
+                        }
+                        else
+                        { //#ff1919
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ff8080" class="bi bi-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
+                            </svg>
+                        }
+                    </td>
+                    <td>
+                        <form asp-controller="Home" asp-action="editAtividade" method="post">
+                            <input type="hidden" name="id" value="@atividade.Id">
+                            <button type="submit" class="btn btn-sm" id="encerrarAtvBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                                </svg>
+                            </button>
+                        </form>
+                        <form asp-controller="AtividadeDP" asp-action="EncerrarAtividadeDP" method="post" onsubmit="return confirm('Deseja encerrar esta atividade?');">
+                            <input type="hidden" name="id" value="@atividade.Id">
+                            <button type="submit" class="btn btn-sm" id="encerrarAtvBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill"
+                                     viewBox="0 0 16 16">
+                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0
+                                                    0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093
+                                                    3.473-4.425a.75.75 0 0 1 1.08-.022z" />
+                                </svg>
+                            </button>
+                        </form>
+                        <form asp-controller="AtividadeDP" asp-action="DeletarAtividadeDP" method="post" onsubmit="return confirm('Deseja deletar esta atividade?');">
+                            <input type="hidden" name="id" value="@atividade.Id">
+                            <button type="submit" class="btn btn-sm" id="delAtvBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="modal" tabindex="-1" role="dialog" id="encerrarAtivModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Encerrar atividade</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza de que deseja encerrar esta atividade?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btnEncerrarModalSim" type="button" class="btn btn-success" onclick="location.href='@Url.Action("EncerrarAtividade", "Home")?id=idAtividadeSelecionada.ToString()'">Sim</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+</script>
+
+<!--<a style="color:black;" href='@Url.Action("EncerrarAtividade", "Home")?id=atividade.Id.ToString()' onclick="return confirm('Deseja deletar esta atividade?');">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+        </svg>
+</a>
+    </button>-->
+
+<script>
+    $(document).ready(function () {
+        $("#pesquisarTabela").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#tabelaAtividades tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
